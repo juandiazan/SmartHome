@@ -1,0 +1,17 @@
+<div class="jumbotron">
+  <h1 class="display-4">Registering as home owner</h1>
+  <p class="lead">
+    Registering as home owner allows you to access the benefits of being a home owner without having to create a new account.
+  </p>
+  <hr class="my-4" />
+  <p>
+    Are you sure you want to proceed? This action cannot be undone.
+  </p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" (click)="onClick()" role="button">Register as home owner</a>
+  </p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" routerLink="/home" class="btn btn-danger" role="button">Cancel</a>
+  </p>
+  <p *ngIf="message" class="alert alert-info">{{ message }}</p>
+</div>

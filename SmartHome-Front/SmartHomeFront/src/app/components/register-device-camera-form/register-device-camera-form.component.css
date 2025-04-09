@@ -1,0 +1,26 @@
+.form-container {
+    margin-top: 1.5em;
+}
+
+.form-check-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    align-items: center;
+}
+
+.form-check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-checkbox .form-check-input {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.5em;
+}
+
+.custom-checkbox .form-check-label {
+    font-size: 1.1em;
+}

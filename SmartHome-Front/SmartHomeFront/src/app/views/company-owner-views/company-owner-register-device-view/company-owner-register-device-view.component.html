@@ -1,0 +1,21 @@
+<div class="register-device-view text-center">
+  <label for="device-select">Choose a device type:</label>
+  <select id="device-select" (change)="onDeviceChange($event)">
+    <option value=""> - Choose an option - </option>
+    <option value="camera">Security Camera</option>
+    <option value="movement-sensor">Motion Sensor</option>
+    <option value="window-sensor">Window Sensor</option>
+    <option value="smart-lamp">Smart Lamp</option>
+  </select>
+
+  <ng-container *ngIf="selectedDevice">
+    <ng-container [ngSwitch]="selectedDevice">
+      <div class="card register-device-container mx-auto">
+        <app-register-device-camera-form *ngSwitchCase="'camera'"></app-register-device-camera-form>
+        <app-register-device-movement-sensor *ngSwitchCase="'movement-sensor'"></app-register-device-movement-sensor>
+        <app-register-device-window-sensor-form *ngSwitchCase="'window-sensor'"></app-register-device-window-sensor-form>
+        <app-register-device-smart-lamp-form *ngSwitchCase="'smart-lamp'"></app-register-device-smart-lamp-form>
+      </div>
+    </ng-container>
+  </ng-container>
+</div>

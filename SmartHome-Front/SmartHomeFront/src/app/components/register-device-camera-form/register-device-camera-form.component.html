@@ -1,0 +1,54 @@
+<div class="register-device-camera">
+    <h2>Register Security Camera</h2>
+    <div class="form-container">
+      <form [formGroup]="registerCameraForm" (ngSubmit)="registerCamera()">
+        <app-form-item [label]="'Name'" [type]="'text'" [placeholder]="'Enter the camera name'" required [control]="registerCameraForm.controls.cameraName"></app-form-item>
+    
+        <app-form-item [label]="'Model Number'" [type]="'text'" [placeholder]="'Enter the model number'" required [control]="registerCameraForm.controls.cameraModel"></app-form-item>
+    
+        <app-form-item [label]="'Description'" [type]="'textarea'" [placeholder]="'Enter a description of the camera'" [control]="registerCameraForm.controls.description"></app-form-item>
+    
+        <app-form-item [label]="'Photos (URLs)'" [type]="'text'" [placeholder]="'Enter URLs separated by commas'" [control]="registerCameraForm.controls.photos"></app-form-item>
+    
+        <h5>For use:</h5>
+        <div class="form-check-group">
+          <div class="form-check custom-checkbox">
+            <input class="form-check-input" type="checkbox" name="indoor" formControlName="canBeUsedIndoors" id="indoorCheck">
+            <label class="form-check-label" for="indoorCheck">
+                Indoor Use
+            </label>
+          </div>
+          <div class="form-check custom-checkbox">
+            <input class="form-check-input" type="checkbox" name="outdoor" formControlName="canBeUsedOutdoors" id="outdoorCheck">
+            <label class="form-check-label" for="outdoorCheck">
+                Outdoor Use
+            </label>
+          </div>
+        </div>
+    
+        <h5>Supported actions:</h5>
+        <div class="form-check-group">
+          <div class="form-check custom-checkbox">
+            <input class="form-check-input" type="checkbox" name="motionDetection" formControlName="hasMovementDetectionSupport" id="motionDetectionCheck">
+            <label class="form-check-label" for="motionDetectionCheck">
+                Motion Detection
+            </label>
+          </div>
+          <div class="form-check custom-checkbox">
+            <input class="form-check-input" type="checkbox" name="personDetection" formControlName="hasPersonDetectionSupport" id="personDetectionCheck">
+            <label class="form-check-label" for="personDetectionCheck">
+                Person Detection
+            </label>
+          </div>
+        </div>
+    
+        <button type="submit" class="btn btn-success mt-3">Register Camera</button>
+        <label style="margin-top: 20px;" *ngIf="successMessage" class="alert alert-success" role="alert">
+          {{ successMessage }}
+        </label>
+        <label style="margin-top: 20px;" *ngIf="errorMessage" class="alert alert-danger" role="alert">
+          {{ errorMessage }}
+        </label>
+      </form>
+    </div>
+  </div>

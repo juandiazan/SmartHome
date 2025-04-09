@@ -1,0 +1,26 @@
+.form-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5em;
+  }
+  
+  label {
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 0.5em;
+    color: #333;
+  }
+  
+  input {
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    transition: border 0.3s ease;
+  }
+  
+  input:focus {
+    border-color: #007BFF;
+    outline: none;
+  }
+  

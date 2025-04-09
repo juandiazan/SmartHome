@@ -1,0 +1,23 @@
+<nav>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-default">Page Size</span>
+    </div>
+    <input
+      type="number"
+      class="form-control"
+      [(ngModel)]="currentLimit"
+      aria-label="Default"
+      aria-describedby="inputGroup-sizing-default"
+      (input)="updateLimit()"
+    />
+  </div>
+  <ul class="pagination">
+    <li class="page-item">
+      <button class="page-link" (click)="decrementOffset()">Previous</button>
+    </li>
+    <li class="page-item">
+      <button class="page-link" (click)="incrementOffset()">Next</button>
+    </li>
+  </ul>
+</nav>

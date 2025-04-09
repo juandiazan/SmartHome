@@ -1,0 +1,17 @@
+.company-list-item {
+    border-radius: 0.5rem;
+  }
+  
+  .company-list-item .card-body {
+    padding: 1.5rem;
+  }
+  
+  .company-list-item .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .company-list-item button {
+    font-size: 0.9rem;
+  }
+  

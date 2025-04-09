@@ -1,0 +1,58 @@
+<div class="register-user-form">
+  <h2>Register {{ shownUserRole }}</h2>
+  <app-form-item
+    [label]="'Name'"
+    [type]="'text'"
+    placeholder="Enter name"
+    aria-required="true"
+    [control]="registerForm.controls.name"
+  ></app-form-item>
+  <div *ngIf="registerForm.controls.name.invalid && registerForm.controls.name.touched" class="text-danger">
+    Name is required.
+  </div>
+
+  <app-form-item
+    [label]="'Surname'"
+    [type]="'text'"
+    placeholder="Enter surname"
+    aria-required="true"
+    [control]="registerForm.controls.surname"
+  ></app-form-item>
+  <div *ngIf="registerForm.controls.surname.invalid && registerForm.controls.surname.touched" class="text-danger">
+    Surname is required.
+  </div>
+
+  <app-form-item
+    [label]="'Email'"
+    [type]="'email'"
+    placeholder="Enter email"
+    aria-required="true"
+    [control]="registerForm.controls.email"
+  ></app-form-item>
+  <div *ngIf="registerForm.controls.email.invalid && registerForm.controls.email.touched" class="text-danger">
+    Email is required and must be valid.
+  </div>
+
+  <app-form-item
+    [label]="'Password'"
+    [type]="'password'"
+    placeholder="Enter password"
+    aria-required="true"
+    [control]="registerForm.controls.password"
+  ></app-form-item>
+  <div *ngIf="registerForm.controls.password.invalid && registerForm.controls.password.touched" class="text-danger">
+    Password is required.
+  </div>
+
+  <button type="submit" (click)="register()" class="btn btn-primary w-100">
+    Create {{ shownUserRole }}
+  </button>
+
+  <label style="margin-top: 20px;" *ngIf="successMessage" class="alert alert-success" role="alert">
+    {{ successMessage }}
+  </label>
+
+  <label style="margin-top: 20px;" *ngIf="errorMessage" class="alert alert-danger" role="alert">
+    {{ errorMessage }}
+  </label>
+</div>

@@ -1,0 +1,18 @@
+<div class="card company-register-form mx-auto" style="max-width: 500px;">
+    <div class="card-header text-center bg-primary text-white">
+      Import devices
+    </div>
+    <div class="card-body">
+      <app-form-item [label]="'Import from file path'" [type]="'text'" [control]="registerForm.controls.path" placeholder="Import file path"></app-form-item>
+      <app-company-device-importer-selector (selectionChange)="onSelectionChange($event)"></app-company-device-importer-selector>
+      <div class="text-center mt-3">
+        <button type="submit" class="btn btn-success btn-lg" (click)="importDevices()">Import</button>
+      </div>
+      <label style="margin-top: 20px;" *ngIf="errorMessage" class="alert alert-danger" role="alert">
+        {{ errorMessage }}
+      </label>
+      <label style="margin-top: 20px;" *ngIf="successMessage" class="alert alert-success" role="alert">
+        {{ successMessage }}
+      </label>
+    </div>
+  </div>

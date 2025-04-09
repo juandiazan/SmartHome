@@ -1,0 +1,9 @@
+<label> Choose a Device Importer </label>
+<p></p>
+<select class="form-select" (change)="onSelectChange($event)">
+  <option selected>Choose a Device Importer </option>
+  <option *ngFor="let item of deviceImporters" [value]="item.id">
+    {{ item.name }}
+  </option>
+</select>
+

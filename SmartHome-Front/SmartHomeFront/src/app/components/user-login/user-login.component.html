@@ -1,0 +1,15 @@
+<div class="login-container">
+  <h2>Login</h2>
+  <app-form-item [label]="'Email'" [type]="'email'" placeholder="email@example.com" [control]="loginForm.controls.email"></app-form-item>
+  <app-form-item [label]="'Password'" [type]="'password'" placeholder="Your password"  [control]="loginForm.controls.password"></app-form-item>
+  <button type="submit" class="btn btn-primary w-100" (click)="onLogin()">Sign In</button>
+ 
+  <div class="alert alert-dark" role="alert" style="margin-top: 20px;">
+    No account yet? <a routerLink="/register" class="alert-link">Create an account</a>.
+  </div>
+
+  <label *ngIf="errorMessage" class="alert alert-danger" role="alert">
+    {{ errorMessage }}
+  </label>
+</div>
+

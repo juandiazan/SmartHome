@@ -1,0 +1,23 @@
+<div class="register-device-window-sensor">
+    <h2>Register Window Sensor</h2>
+    <div class="form-container">
+      <form [formGroup]="registerDeviceForm" (ngSubmit)="registerDevice()">
+        <app-form-item [label]="'Name'" [type]="'text'" [placeholder]="'Enter the sensor name'" required [control]="registerDeviceForm.controls.deviceName"></app-form-item>
+    
+        <app-form-item [label]="'Model Number'" [type]="'text'" [placeholder]="'Enter the model number'" required [control]="registerDeviceForm.controls.deviceModel"></app-form-item>
+    
+        <app-form-item [label]="'Description'" [type]="'textarea'" [placeholder]="'Enter a description of the sensor'" [control]="registerDeviceForm.controls.description"></app-form-item>
+    
+        <app-form-item [label]="'Photos (URLs)'" [type]="'text'" [placeholder]="'Enter URLs separated by commas'" [control]="registerDeviceForm.controls.photos"></app-form-item>
+    
+        <button type="submit" class="btn btn-success mt-3">Register Sensor</button>
+      
+        <label style="margin-top: 20px;" *ngIf="successMessage" class="alert alert-success" role="alert">
+          {{ successMessage }}
+        </label>
+        <label style="margin-top: 20px;" *ngIf="errorMessage" class="alert alert-danger" role="alert">
+          {{ errorMessage }}
+        </label>
+      </form>
+    </div>
+  </div>

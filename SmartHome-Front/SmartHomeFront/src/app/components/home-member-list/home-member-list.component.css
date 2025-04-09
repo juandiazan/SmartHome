@@ -1,0 +1,34 @@
+.home-item {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.home-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.home-item .btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    color: #343a40;
+}
+
+.home-item .btn:hover {
+    background-color: #f8f9fa;
+}
+
+.home-item .btn h2 {
+    color: #343a40;
+}
+
+.home-item .btn p {
+    color: #6c757d;
+}
+
+.home-item .btn i {
+    font-size: 1.5rem;
+    color: #343a40;
+}

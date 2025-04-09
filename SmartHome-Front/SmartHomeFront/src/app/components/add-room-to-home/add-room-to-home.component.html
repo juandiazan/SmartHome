@@ -1,0 +1,19 @@
+<div class="form-container">
+    <form [formGroup]="addRoomForm" (ngSubmit)="onSubmit()">
+      <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div>
+      <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+      <div>
+        <label for="home">Select Home:</label>
+        <select id="home" formControlName="homeId">
+          <option *ngFor="let home of homes" [value]="home.homeId">{{ home.homeAlias }}</option>
+        </select>
+        <div *ngIf="homes.length === 0" class="error-message">No homes available.</div>
+      </div>
+      <div>
+        <label for="roomName">Room name</label>
+        <input id="roomName" type="text" formControlName="roomName" placeholder="Your room name here">
+      </div>
+      <button type="submit" [disabled]="addRoomForm.invalid">Create Room</button>
+    </form>
+  </div>
+  

@@ -1,0 +1,38 @@
+<div class="home-member-list-item d-flex align-items-center p-3 border-bottom bg-light rounded shadow-sm">
+  <div class="member-data flex-grow-1 me-3">
+    <h3 class="h6 mb-1">{{ member.memberFullName }}</h3>
+    <p class="mb-1 text-muted">{{ member.memberEmail }}</p>
+    <p class="mb-1" *ngIf="member.canReceiveNotifications"><span class="badge bg-success">Notifications active</span></p>
+    <p class="mb-1" *ngIf="!member.canReceiveNotifications"><span class="badge bg-danger">Cannot receive notifications</span></p>
+
+    <div class="dropdown mt-2">
+      <button
+        class="btn btn-primary dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        See permissions
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <li *ngFor="let permission of member.memberPermissions" class="dropdown-item">
+          {{ permission }} 
+        </li>
+        <li *ngIf="member.memberPermissions.length === 0" class="dropdown-item">
+          Member has no permissions.
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="member-profile-photo">
+    <img
+      [src]="member.memberProfilePicture"
+      alt="{{ member.memberFullName }}"
+      style="width: 60px; height: 60px; object-fit: cover;"
+      *ngIf="member.memberProfilePicture"
+    />
+    <div *ngIf="!member.memberProfilePicture" class="placeholder rounded-circle border" style="width: 60px; height: 60px; background-color: #ccc;"></div>
+  </div>
+</div>

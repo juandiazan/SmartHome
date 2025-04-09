@@ -1,0 +1,8 @@
+<label> Choose Device Model Validator </label>
+<p></p>
+<select class="form-select" (change)="onSelectChange($event)">
+  <option selected>Choose a model validator</option>
+  <option *ngFor="let item of modelValidators" [value]="item.id">
+    {{ item.name }}
+  </option>
+</select>

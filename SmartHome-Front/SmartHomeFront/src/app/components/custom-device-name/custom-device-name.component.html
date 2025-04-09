@@ -1,0 +1,31 @@
+<div class="form-container">
+    <form [formGroup]="modifyDeviceForm" (ngSubmit)="onSubmit()">
+        <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div>
+        <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+        <div>
+            <label for="home">Select Home:</label>
+            <select id="home" formControlName="homeId">
+                <option *ngFor="let home of homes" [value]="home.homeId">{{ home.homeAlias }}</option>
+            </select>
+            <div *ngIf="homes.length === 0" class="error-message">No homes available.</div>
+        </div>
+        <div>
+            <label for="device">Select Device:</label>
+            <select id="device" formControlName="deviceId">
+                <option *ngFor="let device of devices" [value]="device.hardwareId">{{ device.deviceName }} (Alias: {{
+                    device.deviceAlias }})
+                </option>
+            </select>
+            <div *ngIf="devices.length === 0" class="error-message">No devices available.</div>
+        </div>
+        <div>
+            <label for="alias">Modify device custom name:</label>
+            <input id="alias" type="text" formControlName="alias">
+        </div>
+        <button type="submit" [disabled]="modifyDeviceForm.invalid">Modify</button>
+
+        <label *ngIf="errorMessage" class="alert alert-danger mt-3" role="alert">
+            {{ errorMessage }}
+        </label>
+    </form>
+</div>

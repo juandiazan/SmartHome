@@ -1,0 +1,27 @@
+.member-notifications-configuration-item-container {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.member-data {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.member-data h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.member-data p {
+    margin: 5px 0;
+}
+
+.member-profile-photo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}

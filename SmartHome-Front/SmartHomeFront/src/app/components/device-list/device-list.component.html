@@ -1,0 +1,54 @@
+<div class="card device-list container mt-4">
+    <h2 class="mb-4"> Device List </h2>
+    <div class="row mb-2">
+        <div class="col-md-12">
+            <app-generic-filter
+                [label]="'Filter By Device Name'"
+                [type]="'text'"
+                [value]="deviceName"
+                (valueChange)="setDeviceName($event)"
+            ></app-generic-filter>
+        </div>
+        <div class="col-md-12">
+            <app-generic-filter
+                [label]="'Filter By Device Model'"
+                [type]="'text'"
+                [value]="deviceModel"
+                (valueChange)="setDeviceModel($event)"
+            ></app-generic-filter>
+        </div>
+        <div class="col-md-12">
+            <app-generic-filter
+                [label]="'Filter By Device Type'"
+                [type]="'select'"
+                [value]="deviceType"
+                (valueChange)="setDeviceType($event)"
+            ></app-generic-filter>
+        </div>
+        <div class="col-md-12">
+            <app-generic-filter
+                [label]="'Filter By Company'"
+                [type]="'text'"
+                [value]="companyName"
+                (valueChange)="setCompanyName($event)"
+            ></app-generic-filter>
+        </div>
+    </div>
+    <app-pagination
+        [offset]="offset"
+        [limit]="limit"
+        (offsetChange)="setOffset($event)"
+        (limitChange)="setLimit($event)"
+    ></app-pagination>
+    <div class="row mt-3">
+        <div class="col-md-4" *ngFor="let device of devices">
+            <app-device-item-list [device]="device"></app-device-item-list>
+        </div>
+        <div class="col-md-12" *ngIf="noDevices">
+            <div class="alert alert-info text-center" role="alert">
+                No devices found. Please adjust your filters.
+            </div>
+        </div>
+    </div>
+</div>
+

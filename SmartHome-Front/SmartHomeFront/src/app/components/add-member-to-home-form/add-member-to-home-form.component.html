@@ -1,0 +1,46 @@
+<div class="add-member-to-home-form">
+  <div class="card mx-auto" style="max-width: 600px;">
+    <div class="card-header text-center bg-primary text-white">
+      Add Member to Home
+    </div>
+    <div class="card-body">
+      <form [formGroup]="addMemberToHomeForm" (ngSubmit)="addMemberToHome()">
+        <div>
+          <label for="home">Select Home:</label>
+          <select id="home" formControlName="homeId">
+            <option *ngFor="let home of homes" [value]="home.homeId">{{ home.homeAlias }}</option>
+          </select>
+          <div *ngIf="homes.length === 0" class="error-message">No homes available.</div>
+        </div>
+        <app-form-item [label]="'Email of New Member'" [type]="'text'" placeholder="Enter the email of the new member"
+          [control]="addMemberToHomeForm.controls.emailOfNewMember">
+        </app-form-item>
+        <h5>Select permissions for the new member:</h5>
+        <div class="form-check">
+          <label>
+            <input type="checkbox" formControlName="canSeeDevicesOfHome"> List home devices
+          </label>
+        </div>
+        <div class="form-check">
+          <label>
+            <input type="checkbox" formControlName="canAddDeviceToHome"> Add devices to home
+          </label>
+        </div>
+        <div class="form-check">
+          <label>
+            <input type="checkbox" formControlName="canChangeAliasOfDevices"> Change alias of devices of home
+          </label>
+        </div>
+        <div class="text-center mt-3">
+          <button type="submit" class="btn btn-success btn-lg">Add</button>
+        </div>
+        <label *ngIf="successMessage" class="alert alert-success mt-3" role="alert">
+          {{ successMessage }}
+        </label>
+        <label *ngIf="errorMessage" class="alert alert-danger mt-3" role="alert">
+          {{ errorMessage }}
+        </label>
+      </form>
+    </div>
+  </div>
+</div>

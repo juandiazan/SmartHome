@@ -1,0 +1,41 @@
+<div class="d-flex flex-column p-3 bg-dark text-white" style="width: 250px; height: 100vh; position: fixed; overflow-y: auto;">
+  <div *ngIf="!isSecondarySidebar" class="flex-grow-1">
+    <app-sidebar-item
+      *ngFor="let item of items"
+      [label]="item.label"
+      [icon]="item.icon"
+      [route]="item.route"
+      [action]="item.action">
+    </app-sidebar-item>
+
+    <div *ngIf="secondaryRoleItems.length > 0" class="btn-group dropend mt-3">
+      <button
+        type="button"
+        class="btn btn-secondary"
+        (click)="showSecondarySidebar()"
+      >
+        Home Owner Actions
+      </button>
+    </div>
+  </div>
+
+  <div *ngIf="isSecondarySidebar" class="flex-grow-1">
+    <button
+      type="button"
+      class="btn btn-secondary mb-3"
+      (click)="showPrimarySidebar()"
+    >
+      Back
+    </button>
+
+    <app-sidebar-item
+      *ngFor="let item of secondaryRoleItems"
+      [label]="item.label"
+      [icon]="item.icon"
+      [route]="item.route"
+      class="sidebar-item"
+    >
+    </app-sidebar-item>
+  </div>
+</div>
+

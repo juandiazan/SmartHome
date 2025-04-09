@@ -1,0 +1,18 @@
+input[type="checkbox"] {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+input[type="date"] {
+    width: 100%;
+    padding: 1em;
+    border-radius: 4px;
+    border: 1px solid #ced4da;
+}
+
+.field {
+    margin-left: 1em;
+    margin-right: 1em;
+}

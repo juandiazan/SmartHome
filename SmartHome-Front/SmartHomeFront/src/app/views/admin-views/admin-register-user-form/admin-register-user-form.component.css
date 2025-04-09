@@ -1,0 +1,39 @@
+/* Estilos para el contenedor del formulario */
+.admin-register-user-form {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border: 1px solid #dee2e6;
+    border-radius: 0.5rem;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+}
+
+/* Estilo para el encabezado */
+.admin-register-user-form h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #343a40;
+}
+
+/* Estilos para el selector de tipo de usuario */
+.admin-register-user-form app-admin-user-type-selector {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+/* Estilos del formulario de registro */
+.admin-register-user-form app-register-user {
+    display: block;
+}
+
+/* Estilo para el botón dentro del formulario */
+.admin-register-user-form .btn-primary {
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.75rem;
+}

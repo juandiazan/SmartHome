@@ -1,0 +1,23 @@
+<div class="register-device-movement-sensor">
+    <h2>Register Smart Lamp</h2>
+    <div class="form-container">
+      <form [formGroup]="registerDeviceForm" (ngSubmit)="registerDevice()">
+        <app-form-item [label]="'Name'" [type]="'text'" [placeholder]="'Enter the device name'" required [control]="registerDeviceForm.controls.lampName"></app-form-item>
+    
+        <app-form-item [label]="'Model Number'" [type]="'text'" [placeholder]="'Enter the model number'" required [control]="registerDeviceForm.controls.lampModel"></app-form-item>
+    
+        <app-form-item [label]="'Description'" [type]="'textarea'" [placeholder]="'Enter a description of the device'" [control]="registerDeviceForm.controls.description"></app-form-item>
+    
+        <app-form-item [label]="'Photos (URLs)'" [type]="'text'" [placeholder]="'Enter URLs separated by commas'" [control]="registerDeviceForm.controls.photos"></app-form-item>
+      
+        <button type="submit" class="btn btn-success mt-3">Register Lamp</button>
+      
+        <label style="margin-top: 20px;" *ngIf="errorMessage" class="alert alert-danger" role="alert">
+          {{ errorMessage }}
+        </label>
+        <label style="margin-top: 20px;" *ngIf="successMessage" class="alert alert-success" role="alert">
+          {{ successMessage }}
+        </label>
+      </form>
+    </div>
+  </div>

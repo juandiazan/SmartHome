@@ -1,0 +1,17 @@
+<div class="card home-member-list mx-auto">
+    <h2>Select a Home to show its members</h2>
+    <div *ngIf="!selectedHome">
+      <div *ngFor="let home of homes" class="home-item">
+        <button class="home-button" (click)="onSelectHome(home)">
+          <h2>Home: {{ home.homeAlias }}</h2>
+        </button>
+      </div>
+    </div>
+    <div *ngIf="selectedHome">
+      <button class="back-button" (click)="onDeselectHome()">Go Back</button>
+      <h2>{{ selectedHome.homeAlias }}</h2>
+      <div *ngFor="let member of homeMembers">
+        <app-member-notifications-configuration-list-item [member]="member" [homeId]="selectedHome.homeId"></app-member-notifications-configuration-list-item>
+      </div>
+    </div>
+  </div> 

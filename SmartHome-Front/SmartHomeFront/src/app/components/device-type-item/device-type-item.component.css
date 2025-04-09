@@ -1,0 +1,36 @@
+.container {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.list-group-item {
+    margin-bottom: 1em;
+    border: none;
+}
+
+.device-type-item {
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
+
+.device-type-item:hover {
+    transform: scale(1.05);
+}
+
+.card-title {
+    color: #495057;
+    font-weight: bold;
+}
+
+.card-text {
+    color: #6c757d;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}

@@ -1,0 +1,12 @@
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.sidebar-item:hover {
+    background-color: #444;
+}

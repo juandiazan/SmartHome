@@ -1,0 +1,48 @@
+<div class="card register-homeowner-component mx-auto" style="max-width: 500px;">
+  <div class="card-header text-center bg-primary text-white">
+    Create an account
+  </div>
+  <div class="card-body">
+    <form [formGroup]="registerForm" (ngSubmit)="register()">
+      <app-form-item 
+        [label]="'First name'" 
+        [type]="'text'" 
+        placeholder="Your name here"
+        [control]="registerForm.controls.name">
+      </app-form-item>
+      <app-form-item 
+        [label]="'Last name'" 
+        [type]="'text'" 
+        placeholder="Your surname here"
+        [control]="registerForm.controls.surname">
+      </app-form-item>
+      <app-form-item 
+        [label]="'Profile picture route'" 
+        [type]="'text'"
+        placeholder="Enter the URL to your profile picture" 
+        [control]="registerForm.controls.profilePicture">
+      </app-form-item>
+      <app-form-item 
+        [label]="'Email'" 
+        [type]="'text'" 
+        placeholder="Your email here"
+        [control]="registerForm.controls.email">
+      </app-form-item>
+      <app-form-item 
+        [label]="'Password'" 
+        [type]="'password'" 
+        placeholder="Your password here"
+        [control]="registerForm.controls.password">
+      </app-form-item>
+      <div class="text-center mt-3">
+        <button type="submit" class="btn btn-success btn-lg">Create account</button>
+      </div>
+      <label style="margin-top: 20px;" *ngIf="errorMessage" class="alert alert-danger" role="alert">
+        {{ errorMessage }}
+      </label>
+      <label style="margin-top: 20px;" *ngIf="successMessage" class="alert alert-success" role="alert">
+        {{ successMessage }}
+      </label>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="create-home-form">
+    <h2>Create a new home</h2>
+    <form [formGroup]="createHomeForm" (ngSubmit)="createHome()">
+        <app-form-item label="Alias" [type]="'text'" [placeholder]="'Enter an alias for your home'" [control]="createHomeForm.controls.alias"></app-form-item>
+        <div *ngIf="createHomeForm.controls['alias'].invalid && createHomeForm.controls['alias'].touched">
+            Please enter a valid alias.
+        </div>
+
+        <app-form-item label="Main Street" [type]="'text'" [placeholder]="'Enter main street'" [control]="createHomeForm.controls.mainStreet"></app-form-item>
+        <div *ngIf="createHomeForm.controls['mainStreet'].invalid && createHomeForm.controls['mainStreet'].touched">
+            Please enter a valid main street.
+        </div>
+
+        <app-form-item label="Door Number" [type]="'number'" [placeholder]="'Enter door number'" [control]="createHomeForm.controls.doorNumber"></app-form-item>
+        <div *ngIf="createHomeForm.controls['doorNumber'].invalid && createHomeForm.controls['doorNumber'].touched">
+            Please enter a valid door number.
+        </div>
+
+        <app-form-item label="Latitude" [type]="'text'" [placeholder]="'Enter latitude'" [control]="createHomeForm.controls.latitude"></app-form-item>
+        <div *ngIf="createHomeForm.controls['latitude'].invalid && createHomeForm.controls['latitude'].touched">
+            Please enter a valid latitude (e.g., 45.1234).
+        </div>
+
+        <app-form-item label="Longitude" [type]="'text'" [placeholder]="'Enter longitude'" [control]="createHomeForm.controls.longitude"></app-form-item>
+        <div *ngIf="createHomeForm.controls['longitude'].invalid && createHomeForm.controls['longitude'].touched">
+            Please enter a valid longitude (e.g., -75.1234).
+        </div>
+
+        <app-form-item label="Maximum Members" [type]="'number'" [placeholder]="'Enter the maximum number of members'" [control]="createHomeForm.controls.maxAmountOfMembers"></app-form-item>
+        <div *ngIf="createHomeForm.controls['maxAmountOfMembers'].invalid && createHomeForm.controls['maxAmountOfMembers'].touched">
+            The number of members must be at least 1.
+        </div>
+
+        <button type="submit" [disabled]="createHomeForm.invalid">Create Home</button>
+
+        <label *ngIf="successMessage" class="alert alert-success" role="alert">
+            {{ successMessage }}
+        </label>
+        <label *ngIf="errorMessage" class="alert alert-danger" role="alert">
+            {{ errorMessage }}
+        </label>
+    </form>
+</div>

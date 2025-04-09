@@ -1,0 +1,14 @@
+.delete-user-account-list-item {
+    border-radius: 0.75em;
+    padding: 0.5em;
+    background-color: #f8f9fa;
+}
+
+.user-data {
+    border-radius: 0.5em;
+    padding: 0.5em;
+}
+
+.delete-button {
+    margin-top: 1em;
+}

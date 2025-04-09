@@ -1,0 +1,10 @@
+<div class="container delete-user-accounts-list my-4">
+    <h2 class="text-center mb-4">Administrator List</h2>
+    <div class="list-group">
+        <div class="list-group-item mb-3" *ngFor="let userAccount of apiAccounts">
+            <app-user-account-item [userAccount]="userAccount"></app-user-account-item>
+            <button type="button" class="btn btn-primary" (click)="onClick(userAccount)">View details</button>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,20 @@
+<div class="card company-register-form mx-auto" style="max-width: 500px;">
+    <div class="card-header text-center bg-primary text-white">
+      Company Registration
+    </div>
+    <div class="card-body">
+      <app-form-item [label]="'Company Name'" [type]="'text'" [control]="registerForm.controls.name" placeholder="Your company name"></app-form-item>
+      <app-form-item [label]="'Company Logotype Route'" [type]="'text'" [control]="registerForm.controls.logo" placeholder="Your logotype"></app-form-item>
+      <app-form-item [label]="'RUT Number'" [type]="'text'" [control]="registerForm.controls.rut" placeholder="Your company's rut number"></app-form-item>
+      <app-company-model-validator-selector (selectionChange)="onSelectionChange($event)"></app-company-model-validator-selector>
+      <div class="text-center mt-3">
+        <button type="submit" class="btn btn-success btn-lg" (click)="registerCompany()">Register</button>
+      </div>
+      <label style="margin-top: 20px;" *ngIf="successMessage" class="alert alert-success" role="alert">
+        {{ successMessage }}
+      </label>
+      <label style="margin-top: 20px;" *ngIf="errorMessage" class="alert alert-danger" role="alert">
+        {{ errorMessage }}
+      </label>
+    </div>
+  </div>

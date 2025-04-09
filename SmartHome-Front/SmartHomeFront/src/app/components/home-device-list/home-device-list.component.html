@@ -1,0 +1,40 @@
+<h1 class="mb-4 text-center">Homes</h1>
+<div class="container">
+  <div *ngIf="noHomes" class="alert alert-warning text-center" role="alert">
+    No homes available.
+  </div>
+  <div class="row">
+    <div *ngFor="let home of homes" class="col-md-4">
+      <div class="home-item card mb-4 shadow-sm">
+        <div class="card-body">
+          <h2 class="card-title">{{ home.homeAlias }}</h2>
+          <button (click)="viewDevices(home.homeId, '')" class="btn btn-primary">See Devices</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-5" *ngIf="selectedHomeDevices.length > 0">
+  <h3 class="mb-3 text-center">Devices</h3>
+  <div class="d-flex justify-content-center mb-3">
+    <app-generic-filter
+      [label]="'Filter By Room'"
+      [type]="'text'"
+      [value]="roomItIsIn"
+      (valueChange)="setRoom($event)"
+    ></app-generic-filter>
+  </div>
+  <div *ngIf="noDevices" class="alert alert-warning mt-3 text-center" role="alert">
+    No devices available.
+  </div>
+  <div class="row">
+    <div *ngFor="let device of selectedHomeDevices" class="col-md-4">
+      <div class="device-item card mb-4 shadow-sm">
+        <div class="card-body">
+          <app-home-device-list-item [ldevice]="device"></app-home-device-list-item>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

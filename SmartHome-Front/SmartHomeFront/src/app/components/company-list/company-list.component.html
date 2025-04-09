@@ -1,0 +1,27 @@
+<div class="card company-list">
+<app-generic-filter
+    [label]="'Filter By Company Name'"
+    [type]="'text'"
+    [value]="companyName"
+    (valueChange)="setCompanyName($event)"
+  ></app-generic-filter>
+  <app-generic-filter
+    [label]="'Filter By Owner Full Name'"
+    [type]="'text'"
+    [value]="ownerName"
+    (valueChange)="setOwnerName($event)"
+  ></app-generic-filter>
+  <app-pagination
+    [offset]="offset"
+    [limit]="limit"
+    (offsetChange)="setOffset($event)"
+    (limitChange)="setLimit($event)"
+  ></app-pagination>
+  <div class="list-group">
+    <div class="list-group-item mb-3" *ngFor="let company of apiCompanies">
+      <app-company-list-item
+      [company]="company"
+    ></app-company-list-item>
+    </div>
+  </div>
+</div>

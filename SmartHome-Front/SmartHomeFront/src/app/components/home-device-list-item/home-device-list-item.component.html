@@ -1,0 +1,12 @@
+<div class="home-device-list-item">
+    <div class="card-body">
+        <h3 class="card-title">{{ ldevice.deviceName }}</h3>
+        <p class="card-text"><strong>Model:</strong> {{ ldevice.deviceModel }}</p>
+        <p class="card-text"><strong>Alias:</strong> {{ ldevice.deviceAlias }}</p>
+        <p class="card-text"><strong>Room:</strong> {{ ldevice.roomItIsIn }}</p>
+        <p *ngIf="ldevice.connectionState" class="card-text text-success"><strong>Connection Status:</strong> Online</p>
+        <p *ngIf="!ldevice.connectionState" class="card-text text-danger"><strong>Connection Status:</strong> Offline
+        </p>
+        <img [src]="ldevice.mainPhoto" alt="{{ ldevice.deviceName }} photo" class="img-fluid mb-3">
+    </div>
+</div>

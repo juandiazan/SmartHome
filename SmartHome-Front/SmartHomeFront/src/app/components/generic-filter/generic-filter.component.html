@@ -1,0 +1,64 @@
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-default">
+      {{ label }}
+    </span>
+  </div>
+
+  <!--Como el checkbox es un caso especial, decidimos usar ngIf para que la checkbox se vea bien-->
+  <div *ngIf="type === 'checkbox'">
+    <input
+      type="checkbox"
+      [(ngModel)]="currentValue"
+      aria-label="Default"
+      (change)="updateValue()"
+    />
+  </div>
+  
+  <!--Como el date selector es un caso especial, decidimos usar ngIf-->
+  <div *ngIf="type === 'date'">
+    <input
+      type="date"
+      [(ngModel)]="currentValue"
+      aria-label="Default"
+      (change)="updateValue()"
+    />
+  </div>
+
+  <!--Como el dropdown es un caso especial, decidimos usar ngIf-->
+  <div *ngIf="type === 'select'">
+    <div class="select-wrapper">
+      <select
+        class="form-control"
+        [(ngModel)]="currentValue"
+        aria-label="Default"
+        aria-describedby="inputGroup-sizing-default"
+        (change)="updateValue()"
+      >
+        <option value="" disabled selected>Choose an option</option>
+        <option *ngFor="let option of options" [value]="option">
+          {{ option }}
+        </option>
+      </select>
+      
+      <button
+        class="btn btn-secondary mt-2"
+        (click)="resetValue()"
+        type="button"
+      >
+        Reset
+      </button>
+    </div>
+  </div>
+
+  <div *ngIf="type !== 'checkbox' && type !== 'date' && type !== 'select'">
+    <input
+      [type]="type"
+      class="form-control"
+      [(ngModel)]="currentValue"
+      aria-label="Default"
+      aria-describedby="inputGroup-sizing-default"
+      (input)="updateValue()"
+    />
+  </div>
+</div>

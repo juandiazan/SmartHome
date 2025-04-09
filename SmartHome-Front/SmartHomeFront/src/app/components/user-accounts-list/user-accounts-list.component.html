@@ -1,0 +1,29 @@
+<div class="container user-accounts-list my-4">
+  <h2 class="text-center mb-4">Users</h2>
+  <app-generic-filter
+    [label]="'Filter By Role'"
+    [type]="'text'"
+    [value]="role"
+    (valueChange)="setRole($event)"
+  ></app-generic-filter>
+  <app-generic-filter
+    [label]="'Filter By Full Name'"
+    [type]="'text'"
+    [value]="fullName"
+    (valueChange)="setName($event)"
+  ></app-generic-filter>
+  <app-pagination
+    [offset]="offset"
+    [limit]="limit"
+    (offsetChange)="setOffset($event)"
+    (limitChange)="setLimit($event)"
+  ></app-pagination>
+
+  <div class="list-group">
+    <div class="list-group-item mb-3" *ngFor="let userAccount of apiAccounts">
+      <app-user-account-item
+        [userAccount]="userAccount"
+      ></app-user-account-item>
+    </div>
+  </div>
+</div>

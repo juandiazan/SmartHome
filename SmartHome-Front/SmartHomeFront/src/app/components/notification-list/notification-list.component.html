@@ -1,0 +1,39 @@
+<div class="container user-accounts-list my-4">
+    <h2 class="text-center mb-4">Notifications</h2>
+    <div class="card bg-light p-2">
+        <div class="field">
+          <app-generic-filter
+            [label]="'Filter By Device Type'"
+            [type]="'text'"
+            [value]="deviceType"
+            (valueChange)="setDeviceType($event)"
+          />
+        </div>
+
+        <div class="field">
+          <app-generic-filter
+            [label]="'Filter By Creation Date'"
+            [type]="'date'"
+            [value]="creationDate"
+            (valueChange)="setCreationDate($event)"
+          />
+      </div>
+
+      <div class="field">
+        <app-generic-filter
+          [label]="'Was Read?'"
+          [type]="'checkbox'"
+          [value]="wasRead"
+          (valueChange)="setWasRead($event)"
+          class="filter-checkbox"
+        />
+      </div>
+      <button style="margin-bottom: 20px;" type="button" class="btn btn-primary" (click)="resetWasRead()">Reset read filter</button>
+        <div class="list-group">
+          <div class="list-group-item mb-3" *ngFor="let notif of notifications">
+            <app-notification-list-item [notification]="notif">
+            </app-notification-list-item>
+          </div>
+      </div>
+    </div>
+  </div>

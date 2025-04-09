@@ -1,0 +1,33 @@
+<div class="form-container">
+    <form [formGroup]="addDeviceToRoomForm" (ngSubmit)="onSubmit()">
+      <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div>
+      <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+      
+      <div>
+        <label for="home">Select Home:</label>
+        <select id="home" formControlName="homeId">
+          <option *ngFor="let home of homes" [value]="home.homeId">{{ home.homeAlias }}</option>
+        </select>
+        <div *ngIf="homes.length === 0" class="error-message">No homes available.</div>
+      </div>
+
+      <div>
+        <label for="room">Select Room of Home:</label>
+        <select id="room" formControlName="roomId">
+          <option *ngFor="let room of rooms" [value]="room.roomId">{{ room.roomName }}</option> 
+        </select>
+        <div *ngIf="rooms.length === 0" class="error-message">Home has no rooms created.</div>
+      </div>
+
+      <div>
+        <label for="device">Select Device of Home:</label>
+        <select id="device" formControlName="hardwareId">
+          <option *ngFor="let homeDevice of homeDevices" [value]="homeDevice.hardwareId">{{ homeDevice.deviceAlias }}</option>
+        </select>
+        <div *ngIf="homeDevices.length === 0" class="error-message">Home has no devices associated.</div>
+      </div>
+
+      <button type="submit" [disabled]="addDeviceToRoomForm.invalid">Add Device to Room</button>
+    </form>
+  </div>
+  

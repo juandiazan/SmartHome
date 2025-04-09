@@ -1,0 +1,26 @@
+<div class="card mb-3 shadow-sm delete-user-account-list-item">
+    <div class="card-body">
+        <div class="card bg-light p-2 user-data">
+            <p class="mb-1">
+                <b>First Name:</b> {{ userAccount.name }}
+            </p>
+            <p class="mb-1">
+                <b>Last Name:</b> {{ userAccount.surname }}
+            </p>
+            <p class="mb-1">
+                <b>Full Name:</b> {{ userAccount.fullName }}
+            </p>
+            <p class="mb-1">
+                <b>Rol:</b> {{ userAccount.role }}
+            </p>
+            <p class="mb-0 text-muted">
+                <b>Creation Date:</b> {{ userAccount.creationDate }}
+            </p>
+        </div>
+        <div class="delete-button">
+            <button class="btn btn-danger" (click)="onClick()">
+                Borrar
+            </button>
+        </div>
+    </div>
+</div>

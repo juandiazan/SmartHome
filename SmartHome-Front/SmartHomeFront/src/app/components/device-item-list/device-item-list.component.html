@@ -1,0 +1,14 @@
+<div class="device-item-list card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <h3 class="mb-0"> <b> Name: </b> {{device.deviceName}} </h3>
+        <span class="badge badge-primary">{{ device.deviceType }}</span>
+    </div>
+    <div class="device-data card-body">
+        <div class="text-center mb-3">
+            <img [src]="device.mainPhoto" alt="Main Photo" class="img-fluid rounded" />
+        </div>
+        <p> <b> Model:</b>  {{ device.deviceModel }}</p>
+        <p> <b> Owner Company:</b> {{ device.ownerCompanyName }}</p>
+        <p> <b> Type:</b> {{ device.deviceType }}</p>
+    </div>    
+</div>
